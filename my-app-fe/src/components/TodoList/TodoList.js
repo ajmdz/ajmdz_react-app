@@ -6,12 +6,12 @@ function TodoList(props) {
     return (
         <>
         <main>
-            <div class="w-50 mx-auto mt-2">
-                <div class="card card-shadow py-3">
+            <div className="w-50 mx-auto mt-2">
+                <div className="card card-shadow py-3">
                 <TodoCreate />
                 <hr />
-                <div class="container-fluid">
-                    <div class="row">
+                <div className="container-fluid">
+                    <div className="row">
                        <TodoItem /> 
                     
                     </div>

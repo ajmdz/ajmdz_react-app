@@ -3,35 +3,35 @@ import React from 'react';
 function TodoCreate() {
     return (
         <>
-         <div class="container-fluid">
-            <div class="row">
-            <div class="col-12">
+         <div className="container-fluid">
+            <div className="row">
+            <div className="col-12">
                 <h1>Todo List</h1>
             </div>
-            <div class="col-12">
-                <div class="form-group">
+            <div className="col-12">
+                <div className="form-group">
                 <input
                     type="text"
                     name="title"
                     id="title"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Enter title"
                 />
                 </div>
             </div>
-            <div class="col-12 mt-1">
-                <div class="form-group">
+            <div className="col-12 mt-1">
+                <div className="form-group">
                 <input
                     type="text"
                     name="description"
                     id="description"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Enter description"
                 />
                 </div>
             </div>
-            <div class="col-12 mt-2 d-flex justify-content-end">
-                <button class="btn btn-primary">ADD</button>
+            <div className="col-12 mt-2 d-flex justify-content-end">
+                <button className="btn btn-primary">ADD</button>
             </div>
             </div>
         </div>   
