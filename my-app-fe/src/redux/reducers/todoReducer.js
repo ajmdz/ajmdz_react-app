@@ -12,6 +12,11 @@ const initialState = {
             title: "Eat Lunch",
             description: "Eat lunch at 12pm"
         },
+        {
+            id: 3,
+            title: "Eat Dinner",
+            description: "Eat dinner at 9pm"
+        },
     ]
 }
 
