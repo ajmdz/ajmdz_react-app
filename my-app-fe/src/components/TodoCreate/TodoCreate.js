@@ -22,6 +22,24 @@ function TodoCreate() {
         dispatch(setTodos(newTodo));
     }
 
+    const updateTodo = () => {
+        const id = singleTodo.id;
+        const newTodo = [...allTodos]; //kailangan daw talaga nito
+        // hanapin yung index gamit yung id. Nasa TodoItem yung index
+        const index = allTodos.findIndex((todo) => todo.id === id);
+        //gagamit ng splice para mag insert sa given index
+        
+        const single = {
+            id: id,
+            title: todoTitle,
+            description: todoDescription,
+        }
+        
+        newTodo.splice(index, 1, single);
+
+        dispatch(setTodos(newTodo))
+    }
+
     useEffect(() => {
         //para mawala yung error sa unang load pag walang laman yung singleTodo
         if (singleTodo.title != null) {
@@ -64,7 +82,12 @@ function TodoCreate() {
                 </div>
             </div>
             <div className="col-12 mt-2 d-flex justify-content-end">
-                <button onClick={() => addTodo()} className="btn btn-primary">ADD</button>
+                {
+                    singleTodo.title != null ?
+                    <button onClick={() => updateTodo()} className="btn btn-success">UPDATE</button>
+                    :
+                    <button onClick={() => addTodo()} className="btn btn-primary">ADD</button>
+                } 
             </div>
             </div>
         </div>   
