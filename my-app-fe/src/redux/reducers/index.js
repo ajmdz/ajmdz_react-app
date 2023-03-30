@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import { setTodosReducers } from './todoReducer';
+import { setSingleTodoReducers, setTodosReducers } from './todoReducer';
 const reducers = combineReducers({
-    allTodos:setTodosReducers
+    allTodos:setTodosReducers,
+    singleTodo:setSingleTodoReducers,
 });
 export default reducers;

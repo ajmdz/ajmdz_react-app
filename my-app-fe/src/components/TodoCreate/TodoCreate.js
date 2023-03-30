@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTodos } from '../../redux/actions/todoAction';
 
@@ -6,6 +6,7 @@ function TodoCreate() {
     const [todoTitle, setTodoTitle] = useState('');
     const [todoDescription, setTodoDescription] = useState('');
     const allTodos = useSelector((state) => state.allTodos.todos)
+    const singleTodo = useSelector((state) => state.singleTodo)
     const dispatch = useDispatch();
 
     const addTodo = () => {
@@ -21,6 +22,14 @@ function TodoCreate() {
         dispatch(setTodos(newTodo));
     }
 
+    useEffect(() => {
+        //para mawala yung error sa unang load pag walang laman yung singleTodo
+        if (singleTodo.title != null) {
+            setTodoTitle(singleTodo.title);
+            setTodoDescription(singleTodo.description);
+        }
+    }, [singleTodo]);
+
     return (
         <>
          <div className="container-fluid">
@@ -34,6 +43,7 @@ function TodoCreate() {
                     type="text"
                     name="title"
                     id="title"
+                    value={todoTitle}
                     onChange={(e) => setTodoTitle(e.target.value)}
                     className="form-control"
                     placeholder="Enter title"
@@ -46,6 +56,7 @@ function TodoCreate() {
                     type="text"
                     name="description"
                     id="description"
+                    value={todoDescription}
                     onChange={(e) => setTodoDescription(e.target.value)}
                     className="form-control"
                     placeholder="Enter description"

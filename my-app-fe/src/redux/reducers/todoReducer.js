@@ -28,3 +28,12 @@ export const setTodosReducers = (state=initialState, {type, payload}) => {
             return state;
     }
 }
+
+export const setSingleTodoReducers = (state={}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SINGLE_TODO:
+            return { ...state, ...payload }
+        default:
+            return state;
+    }
+}

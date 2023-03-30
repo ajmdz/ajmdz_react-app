@@ -6,3 +6,10 @@ export const setTodos = (todos) => {
         payload:todos
     };
 }
+
+export const setSingleTodo = (todos) => {
+    return {
+        type: ActionTypes.SINGLE_TODO,
+        payload:todos
+    };
+}
